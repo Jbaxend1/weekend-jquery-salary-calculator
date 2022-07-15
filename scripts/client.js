@@ -8,7 +8,7 @@ function readyNow() {
 }
 
 function displayInputs() {
-    
+
     let firstName = $('#f-name').val();
     let lastName = $('#l-name').val();
     let ids = $('#emp-id').val();
@@ -23,7 +23,11 @@ function displayInputs() {
             <td>${ids}</td>
             <td>${title}</td>
             <td>${annualSal}</td>
+            <td>
+                <button class="deletBtn">Delete</button>
+            </td>
         </tr>
+        
     `)
     $('#f-name').val('');
     $('#l-name').val('');
