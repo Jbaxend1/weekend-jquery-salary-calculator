@@ -3,7 +3,10 @@ console.log('in JS');
 $(readyNow);
 
 function readyNow() {
-    console.log('readyNOw')
+    // console.log('readyNOw')
+    // Event delegator
+    $('body').on('click', '.deleteBtn', deleteInput);
+    // Event handlers
     $('#submit').on('click', displayInputs);
 }
 
@@ -24,7 +27,7 @@ function displayInputs() {
             <td>${title}</td>
             <td>${annualSal}</td>
             <td>
-                <button class="deletBtn">Delete</button>
+                <button class="deleteBtn">Delete</button>
             </td>
         </tr>
         
@@ -34,4 +37,8 @@ function displayInputs() {
     $('#emp-id').val('');
     $('#emp-title').val('');
     $('#salary').val('');
+}
+
+function deleteInput() {
+    $(this).parent().parent().remove();
 }
