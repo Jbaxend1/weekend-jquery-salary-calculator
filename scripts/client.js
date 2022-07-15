@@ -8,6 +8,7 @@ function readyNow() {
 }
 
 function displayInputs() {
+    
     let firstName = $('#f-name').val();
     let lastName = $('#l-name').val();
     let ids = $('#emp-id').val();
@@ -24,4 +25,9 @@ function displayInputs() {
             <td>${annualSal}</td>
         </tr>
     `)
+    $('#f-name').val('');
+    $('#l-name').val('');
+    $('#emp-id').val('');
+    $('#emp-title').val('');
+    $('#salary').val('');
 }
