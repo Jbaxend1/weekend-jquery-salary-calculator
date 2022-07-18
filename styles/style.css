@@ -1,0 +1,52 @@
+body {
+    background-color: rgb(138, 138, 168);
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+
+}
+
+table, th, td {
+    text-align: center;
+    margin-left: 5px;
+    table-layout: fixed;
+    border: 2px solid;
+    width: 80%;
+    border-collapse: collapse;
+}
+
+td {
+    font-size:smaller;
+
+}
+
+button {
+    margin-left: 5px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    padding: 5px 10px;
+    background-color: rgb(226, 161, 92);
+    color: black;
+    border: 2px solid black;
+    border-radius: 5px;
+    transition-duration: 0.4s;
+}
+
+button:hover {
+    background-color: rgb(226, 161, 92);
+    color: white;
+}
+
+.title {
+    text-align: center;
+    
+}
+
+input {
+    padding: 7px;
+    border: none;
+    border-radius: 4px;
+    margin-left: 5px;
+}
+
+.input-fields {
+}

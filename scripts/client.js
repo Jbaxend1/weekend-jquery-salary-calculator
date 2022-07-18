@@ -7,6 +7,7 @@ function readyNow() {
 
     // Event delegators
     $('body').on('click', '.deleteBtn', deleteInput);
+    $('body').on('click', '#submit', monthlyCalculation);
 
     // Event handlers
     $('#submit').on('click', displayInputs);
@@ -14,17 +15,14 @@ function readyNow() {
 
 let emp = [];
 let monthly = 0;
-let roundMon = monthly.toLocaleString("en-US");
 
 function displayInputs() {
-    
     
     let firstName = $('#f-name').val();
     let lastName = $('#l-name').val();
     let ids = $('#emp-id').val();
     let title = $('#emp-title').val();
     let annualSal = $('#salary').val();
-
 
     let newObj = {
         first: firstName,
@@ -36,15 +34,7 @@ function displayInputs() {
 
     monthlyCalculation(emp);
 
-    console.log("monthly:", monthly);
-
-    
-
-    // console.log(monthly);
-    
-   
-
-    
+    // console.log("monthly:", monthly):
 
     $('#data-table').append(`
         <tr>
@@ -70,10 +60,8 @@ function displayInputs() {
     $('#total').text(`
         Total Monthly: $${Math.ceil(monthly).toLocaleString("en-US")}
     `)
-    // monthlyCalculation();
+    
 }
-
-
 
 function deleteInput() {
     $(this).parent().parent().remove();
@@ -87,10 +75,12 @@ function monthlyCalculation() {
     }
     
     monthly = sum /= 12;
-    // let str = monthly.Intl.NumberFormat('en-US');
     
     if(monthly > 20000){
         $('.total-red').css('background-color', 'red');
+        $('.total-red').css('border-radius', '3px');
+        $('.total-red').css('padding', '18px', '18px');
+        $('.total-red').css('width', 'max-content');
 
     }
     
