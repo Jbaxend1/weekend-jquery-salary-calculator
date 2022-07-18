@@ -14,8 +14,7 @@ function readyNow() {
 
 let emp = [];
 let monthly = 0;
-
-
+let roundMon = monthly.toLocaleString("en-US");
 
 function displayInputs() {
     
@@ -69,7 +68,7 @@ function displayInputs() {
     $('#salary').val('');
 
     $('#total').text(`
-        Total Monthly: $${Math.ceil(monthly)}
+        Total Monthly: $${Math.ceil(monthly).toLocaleString("en-US")}
     `)
     // monthlyCalculation();
 }
@@ -85,21 +84,15 @@ function monthlyCalculation() {
     let sum = 0;
     for(let i = 0; i < emp.length; i++){
         sum += parseInt(emp[i].annSal);
-        // console.log(monthly);
-        
-        // console.log(sum);
-        // monthly = (numSum /= 12);
     }
     
     monthly = sum /= 12;
     // let str = monthly.Intl.NumberFormat('en-US');
-
-    // Math.ceil(monthly);
-
+    
     if(monthly > 20000){
         $('.total-red').css('background-color', 'red');
 
     }
+    
 }
 
-console.log(monthlyCalculation());
